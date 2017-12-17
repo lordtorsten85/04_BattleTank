@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "TankAimingComponent.h"
 #include "CoreMinimal.h"
 #include "Tank.h"
 #include "AIController.h"
@@ -20,5 +21,7 @@ public:
 
 	ATank* GetPlayerTank() const;
 
-	void BeginPlay() override;
+	virtual void BeginPlay() override;
+
+	virtual void Tick(float DeltaTime) override;
 };
