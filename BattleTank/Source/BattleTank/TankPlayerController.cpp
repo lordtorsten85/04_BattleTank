@@ -14,16 +14,11 @@ void ATankPlayerController::Tick(float DeltaTime)
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-	//UE_LOG(LogTemp, Warning, TEXT("PlayerController Begin Play"));
 
 	auto ControlledTank = GetControlledTank();
 	if (!ControlledTank)
 	{
-		//UE_LOG(LogTemp, Error, TEXT("NO TANK"));
-	}
-	else
-	{
-		//UE_LOG(LogTemp, Warning, TEXT("Tank is: %s"), *ControlledTank->GetName());
+		UE_LOG(LogTemp, Error, TEXT("NO TANK"));
 	}
 }
 
@@ -39,11 +34,11 @@ void ATankPlayerController::AimTowardsCrosshair()
 
 	FVector HitLocation; // out parameter
 
-	/*
+	
 	if (GetSightRayHitLocation(HitLocation))
 	{
 		GetControlledTank()->AimAt(HitLocation);
-	}*/
+	}
 }
 
 bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const

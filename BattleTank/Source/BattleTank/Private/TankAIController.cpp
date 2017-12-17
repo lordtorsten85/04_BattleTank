@@ -27,10 +27,6 @@ void ATankAIController::BeginPlay()
 	{
 		UE_LOG(LogTemp, Error, TEXT("NO TANK"));
 	}
-	else
-	{
-		UE_LOG(LogTemp, Warning, TEXT("AI Tank is: %s"), *PlayerTank->GetName());
-	}
 }
 
 ATank* ATankAIController::GetControlledTank() const
