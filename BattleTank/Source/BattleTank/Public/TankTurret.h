@@ -20,6 +20,6 @@ public:
 
 private:
 	UPROPERTY(EditAnywhere, Category = Setup)
-		float MaxDegreesPerSecond = 20.f; /// Max speed turret can rotate	
+		float MaxDegreesPerSecond = 45.f; /// Max speed turret can rotate	
 	
 };
