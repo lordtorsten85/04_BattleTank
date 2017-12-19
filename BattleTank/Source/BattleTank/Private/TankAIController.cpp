@@ -2,6 +2,8 @@
 
 #include "TankAIController.h"
 #include "BattleTank.h"
+#include "TankAimingComponent.h"
+#include "Tank.h"
 
 
 void ATankAIController::Tick(float DeltaTime)

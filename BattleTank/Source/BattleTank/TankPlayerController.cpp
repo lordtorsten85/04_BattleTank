@@ -4,6 +4,7 @@
 #include "WorldCollision.h"
 #include "Engine/World.h"
 #include "BattleTank.h"
+#include "Tank.h"
 
 void ATankPlayerController::Tick(float DeltaTime)
 {
