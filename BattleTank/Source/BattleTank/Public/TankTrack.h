@@ -20,5 +20,19 @@ public:
 	
 	// Max force per track in Newtons
 	UPROPERTY(EditDefaultsOnly)
-		float TrackMaxDrivingForce = 400000; // Assume 40 ton tank and 1g acceleration
+	float TrackMaxDrivingForce = 90000000.0; // Assume 40 ton tank and 1g acceleration
+
+private:
+	void ApplySidewaysForce();
+
+	void DriveTrack();
+
+	virtual void BeginPlay() override;
+
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+
+	UTankTrack();
+
+	float CurrentThrottle = 0;
 };
