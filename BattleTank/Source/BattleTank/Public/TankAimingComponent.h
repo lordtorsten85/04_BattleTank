@@ -12,7 +12,8 @@ enum class EFiringState : uint8
 {
 	Reloading,
 	Aiming,
-	Locked
+	Locked,
+	OutOfAmmo
 };
 
 // Forward declaraction
@@ -39,6 +40,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Firing")
 	void Fire();
 
+	EFiringState GetFiringState() const;
+
+	UFUNCTION(BlueprintCallable, Category = "Firing")
+	int32 GetRoundsLeft() const;
+
 protected:
 	// Set state based on reload speed
 	UPROPERTY(BlueprintReadOnly, Category = "State")
@@ -59,7 +65,7 @@ private:
 	bool IsBarrelMoving();
 
 	UPROPERTY(EditAnywhere, Category = "Firing")
-	float LaunchSpeed = 40000; // Starting value of 40m/s
+	float LaunchSpeed = 8000; // Starting value of 8m/s
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3; //Reload time
@@ -73,4 +79,7 @@ private:
 
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
+
+	int32 AmmoCount = 3;
+
 };
