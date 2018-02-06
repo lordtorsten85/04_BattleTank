@@ -64,14 +64,17 @@ private:
 	//Determines if the barrel is moving or not
 	bool IsBarrelMoving();
 
+	UPROPERTY(EditAnywhere, Category = "Setup")
+	TSubclassOf<AProjectile> ProjectileBlueprint; //Projectile used on this tank
+
 	UPROPERTY(EditAnywhere, Category = "Firing")
 	float LaunchSpeed = 8000; // Starting value of 8m/s
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
 	float ReloadTimeInSeconds = 3; //Reload time
 
-	UPROPERTY(EditAnywhere, Category = "Setup")
-	TSubclassOf<AProjectile> ProjectileBlueprint; //Projectile used on this tank
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	int32 AmmoCount = 3;
 
 	double LastFireTime = 0; // Used for reloading
 
@@ -79,7 +82,4 @@ private:
 
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
-
-	int32 AmmoCount = 3;
-
 };
