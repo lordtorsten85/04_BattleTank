@@ -22,6 +22,8 @@ private:
 
 	virtual void Tick(float DeltaTime) override;
 
+	virtual void SetPawn(APawn* Pawn) override;
+
 	// Start tank moving barrel towards crosshair
 	void AimTowardsCrosshair();
 	bool GetSightRayHitLocation(FVector& OutLocation) const;
@@ -38,4 +40,7 @@ private:
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
 
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
+
+	UFUNCTION()
+	void OnTankDeath();
 };
